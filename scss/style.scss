@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+// Colors
+$textColor: #999;
+$activTextColor: #111;
+$akcentColor: #c4092f;
+$headingColor: #282d30;
+$tableBg: #f5f6f6;
+// Cars colors
+$black: #000;
+$white: #fff;
+$gray: #cbcbcc;
+$red: #d74345;
+$green: #88c504;
+
+// Global
+body {
+  color: $textColor;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+// First Section
+
+.carSelection {
+  padding-top: 65px;
+}
+
+.formField {
+  width: 100%;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+
+  .formFieldName,
+  .formFieldYear,
+  .formFieldPrice {
+    border-bottom: 2px solid transparent;
+  }
+
+  .formFieldName:hover input,
+  .formFieldYear:hover input,
+  .formFieldPrice:hover input {
+    border-bottom: 2px solid $akcentColor;
+  }
+
+  .formFieldName input:focus,
+  .formFieldYear input:focus,
+  .formFieldPrice input:focus {
+    border-bottom: 2px solid $activTextColor;
+  }
+}
+
+.container {
+  position: relative;
+  height: 30px;
+  margin: auto;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  .checkColor {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid #999;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+  .checkmarkWhite {
+    //border: 1px solid #e6e9ea;
+    background-color: $white;
+  }
+  .checkmarkBlack {
+    background-color: $black;
+  }
+  .checkmarkGray {
+    background-color: $gray;
+  }
+  .checkmarkRed {
+    background-color: $red;
+  }
+  .checkmarkGreen {
+    background-color: $green;
+  }
+}
+
+.checkColor:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  top: -2px;
+  left: -2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid $akcentColor;
+}
+
+.formFieldStatus {
+  width: 100%;
+  height: 40px;
+}
+
+.formFieldSend button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  color: $white;
+  background-color: $akcentColor;
+  border-radius: 3px;
+}
+
+.icon-arrow-right-mini {
+  display: inline-block;
+  pointer-events: none;
+  vertical-align: bottom;
+  fill: white;
+  margin-left: 4px;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: -3px;
+}
+
+@media (min-width: 768px) {
+  .formFieldName,
+  .formFieldYear,
+  .formFieldPrice,
+  .formFieldColor,
+  .formFieldStatus,
+  .formFieldSend {
+    width: 32%;
+  }
+}
+
+@media (max-width: 767px) {
+  .formFieldName {
+    order: 1;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+  .formFieldYear {
+    order: 3;
+    width: 49%;
+  }
+  .formFieldPrice {
+    order: 2;
+    width: 49%;
+  }
+  .formFieldColor {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+  .formFieldStatus, .formFieldSend {
+    width: 49%;
+    height: 40px;
+  }
+}
+
+.formField input {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  color: $activTextColor;
+  border: 1px solid $textColor;
+}
+
+::placeholder {
+    color: $textColor;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: $textColor;
+}
+
+::-ms-input-placeholder {
+    color: $textColor;
+}
+
+// Second Section
+
+.inStock {
+  padding-top: 24px;
+
+  h2 {
+    margin-bottom: 32px;
+    padding-left: 1rem;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    color: $headingColor;
+    text-transform: uppercase;
+    border-left: 2px solid #8b9497;
+  }
+
+  .carsTable {
+    background: $tableBg;
+  }
+  .tableRow {
+    width: 100%;
+    flex-flow: row wrap;
+    border-bottom: 1px solid #e6e9ea;
+
+    .tableHead {
+      background: $akcentColor;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: .1em;
+
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .tableCell {
+      box-sizing: border-box;
+      flex-grow: 1;
+      //width: 100%;  // Default to full width
+      //border: 1px solid #e6e9ea;
+      padding: 0.5rem 1rem;
+
+      @media (min-width: 768px) {
+        &:nth-child(1) {
+          width: 40%;
+        }
+        &:nth-child(2) {
+          width: 5%;
+        }
+        &:nth-child(3) {
+          width: 10%;
+        }
+        &:nth-child(4) {
+          width: 15%;
+        }
+        &:nth-child(5) {
+          width: 15%;
+        }
+        &:nth-child(6) {
+          width: 15%;
+        }
+        &:nth-child(7) {
+          width: 40%;
+        }
+      }
+
+      @media (max-width: 767px) {
+        &:nth-child(1) {
+          width: 40%;
+          order: 1;
+        }
+        &:nth-child(2) {
+          width: 20%;
+          order: 5;
+        }
+        &:nth-child(3) {
+          width: 20%;
+          order: 2;
+        }
+        &:nth-child(4) {
+          width: 40%;
+          order: 6;
+        }
+        &:nth-child(5) {
+          width: 40%;
+          order: 3;
+        }
+        &:nth-child(6) {
+          width: 40%;
+          order: 7;
+        }
+        &:nth-child(7) {
+          width: 100%;
+          order: 4;
+        }
+      }
+    }
+
+    .additionally {
+      display: block;
+      width: 40%;
+      padding: 0 1rem 1rem;
+      font-size: 13px;
+      color: #8b9497;
+    }
+  }
+
+}
+
+.carsColor {
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.black {
+  background-color: $black;
+}
+
+.white {
+  background-color: $white;
+  border: 1px solid #e6e9ea;
+}
+
+.gray {
+  background-color: $gray;
+}
+
+.red {
+  background-color: $red;
+}
+
+.green {
+  background-color: $green;
+}
+button {
+  display: inline-block;
+  font-size: 14px;
+  background: none;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+  color: #8b9497;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    color: white;
+    background: #282d30;
+  }
+}

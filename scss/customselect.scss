@@ -1,0 +1,83 @@
+
+$background: #fff;
+$select-color: #000;
+$select-background: #fff;
+$select-width: 100%;
+$select-height: 40px;
+$select-border: 1px solid #999;
+
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 15px;
+  color: $select-color;
+  width: $select-width;
+  height: $select-height;
+  border: $select-border;
+}
+.select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $select-background;
+  padding: 8px 15px;
+  transition: all 0.2s ease-in;
+  &:after {
+    content:"";
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-color: $select-color transparent transparent transparent;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+  }
+  // &:hover {
+  //   background-color: darken($select-background, 2);
+  // }
+  &:active, &.active {
+    //background-color: darken($select-background, 5);
+    &:after {
+      top: 9px;
+      border-color: transparent transparent $select-color transparent;
+    }
+  }
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: $select-background;
+  border: $select-border;
+
+  li {
+    margin: 0;
+    padding: 12px 0;
+    text-indent: 15px;
+    //border-top: 1px solid darken($select-background, 10);
+    transition: all 0.15s ease-in;
+    &:hover {
+      color: $select-color;
+      background-color: $select-background;
+      font-weight: 500;
+    }
+    &[rel="hide"] {
+      display: none;
+    }
+  }
+}

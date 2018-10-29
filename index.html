@@ -1,0 +1,168 @@
+﻿<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Test page for WayToStart</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <meta property="og:title" content="">
+  <meta property="og:image" content="">
+  <meta property="og:url" content="">
+  <meta property="og:site_name" content="">
+  <meta property="og:description" content="">
+  <meta name="robots" content="all">
+  <meta name="copyright" content="">
+  <meta name="theme-color" content="#9CC2CE">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:image" content="">
+  <meta name="twitter:url" content="">
+  <meta name="twitter:card" content="">
+  <!-- Resource styles -->
+  <link rel="stylesheet" href="css/plugins/reboot.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/customselect.css">
+  <!-- Resource scripts -->
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div class="page">
+    <section class="carSelection">
+      <div class="formField flex-row">
+        <div class="formFieldName">
+          <input type="text" placeholder="Название" name="name" id="name">
+        </div>
+        <div class="formFieldYear">
+          <input type="number" placeholder="Год" name="year" id="year">
+        </div>
+        <div class="formFieldPrice flex-column">
+          <label for="price" class="form__label">Цена</label>
+          <input type="number" placeholder="Введите цену" name="price" id="price">
+        </div>
+      </div>
+      <div class="formField formFieldDescription">
+        <input type="text" placeholder="Описание" name="description" id="description">
+      </div>
+      <div class="formField flex-row param">
+        <div class="formFieldColor flex-row">
+          <span>Цвет</span>
+          <label class="container">
+            <input class="checkColor" type="radio" checked="checked" name="radio">
+            <span class="checkmark checkmarkWhite"></span>
+          </label>
+          <label class="container">
+            <input class="checkColor" type="radio" name="radio">
+            <span class="checkmark checkmarkBlack"></span>
+          </label>
+          <label class="container">
+            <input class="checkColor" type="radio" name="radio">
+            <span class="checkmark checkmarkGray"></span>
+          </label>
+          <label class="container">
+            <input class="checkColor" type="radio" name="radio">
+            <span class="checkmark checkmarkRed"></span>
+          </label>
+          <label class="container">
+            <input class="checkColor" type="radio" name="radio">
+            <span class="checkmark checkmarkGreen"></span>
+          </label>
+        </div>
+        <div class="formFieldStatus">
+          <select>
+            <option value="hide">Статус</option>
+            <option value="">В наличии</option>
+            <option value="">Ожидается</option>
+            <option value="">Нет в наличии</option>
+          </select>
+        </div>
+        <div class="formFieldSend">
+          <button>
+            <span>ОТПРАВИТЬ</span>
+            <svg class="icon-arrow-right-mini" width="15" height="15">
+              <use xlink:href="#arrow-right-mini">
+                <svg id="arrow-right-mini" viewBox="-100.9 99.1 61.9 105.9" width="100%" height="100%">
+                  <path d="M-41.7 145.3l-43.5-43.5c-1.7-1.7-4-2.7-6.5-2.7s-4.8 1-6.5 2.7c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.7 6.5L-61 152l-37.2 37.2c-1.7 1.7-2.7 4-2.7 6.5s1 4.8 2.6 6.5c1.8 1.9 4.2 2.8 6.6 2.8 2.3 0 4.6-.9 6.5-2.6 11.5-11.4 41.2-41 43.3-43l.2-.2c3.6-3.6 3.6-10.4 0-13.9z"></path>
+                </svg>
+              </use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="inStock">
+      <h2>Автомобили в наличии</h2>
+      <div class="carsTable flex-column">
+        <div class="tableRow flex-row">
+          <div class="tableCell tableHead">Название</div>
+          <div class="tableCell tableHead">Год</div>
+          <div class="tableCell tableHead">Цвет</div>
+          <div class="tableCell tableHead">Статус</div>
+          <div class="tableCell tableHead">Цена</div>
+          <div class="tableCell tableHead"></div>
+        </div>
+        <div class="tableRow flex-row">
+          <div class="tableCell">1.6 MT Ambiente 85 л.с. МКПП</div>
+          <div class="tableCell">2012</div>
+          <div class="tableCell"><span class="carsColor black"></span></div>
+          <div class="tableCell">Ожидается</div>
+          <div class="tableCell">1 689 000 руб</div>
+          <div class="tableCell"><button>Удалить</button></div>
+          <div class="tableCell additionally">+ доп. опция «Радио-навигационная система Amundasen 2DIN, CD, MP3</div>
+        </div>
+        <div class="tableRow flex-row">
+          <div class="tableCell">1.6 MT Ambiente Plus 105 л.с. МКПП</div>
+          <div class="tableCell">2012</div>
+          <div class="tableCell"><span class="carsColor white"></span></div>
+          <div class="tableCell">Ожидается</div>
+          <div class="tableCell">1 189 000 руб</div>
+          <div class="tableCell"><button>Удалить</button></div>
+        </div>
+        <div class="tableRow flex-row">
+          <div class="tableCell">1.6 MT Trend 105 л.с. МКПП</div>
+          <div class="tableCell">2012</div>
+          <div class="tableCell"><span class="carsColor black"></span></div>
+          <div class="tableCell">В наличии</div>
+          <div class="tableCell">1 459 000 руб</div>
+          <div class="tableCell"><button>Удалить</button></div>
+        </div>
+        <div class="tableRow flex-row">
+          <div class="tableCell">1.6 MT Ambiente 85 л.с. МКПП</div>
+          <div class="tableCell">2012</div>
+          <div class="tableCell"><span class="carsColor gray"></span></div>
+          <div class="tableCell">Ожидается</div>
+          <div class="tableCell">1 689 000 руб</div>
+          <div class="tableCell"><button>Удалить</button></div>
+        </div>
+        <div class="tableRow flex-row">
+          <div class="tableCell">1.6 PowerShit Trend Sport 105 л.с. AКПП</div>
+          <div class="tableCell">2012</div>
+          <div class="tableCell"><span class="carsColor red"></span></div>
+          <div class="tableCell">Ожидается</div>
+          <div class="tableCell">1 459 000 руб</div>
+          <div class="tableCell"><button>Удалить</button></div>
+        </div>
+        <div class="tableRow flex-row">
+          <div class="tableCell">2.0 PowerShit Trend Sport 150 л.с. AКПП</div>
+          <div class="tableCell">2013</div>
+          <div class="tableCell"><span class="carsColor green"></span></div>
+          <div class="tableCell">Нет в наличии</div>
+          <div class="tableCell">821 000 руб</div>
+          <div class="tableCell"><button>Удалить</button></div>
+          <div class="tableCell additionally">+ доп. опция «Радио-навигационная система Amundasen 2DIN, CD, MP3</div>
+        </div>
+      </div>
+    </section>
+  </div><!-- end /.page -->
+  <!-- scripts -->
+  <script src="js/plugins/jquery.min.js"></script>
+  <script src="js/index.min.js"></script>
+</body>
+
+</html>

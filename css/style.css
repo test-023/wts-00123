@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+body {
+  color: #999;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.carSelection {
+  padding-top: 65px;
+}
+
+.formField {
+  width: 100%;
+  margin-bottom: 32px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.formField .formFieldName,
+.formField .formFieldYear,
+.formField .formFieldPrice {
+  border-bottom: 2px solid transparent;
+}
+.formField .formFieldName:hover input,
+.formField .formFieldYear:hover input,
+.formField .formFieldPrice:hover input {
+  border-bottom: 2px solid #c4092f;
+}
+.formField .formFieldName input:focus,
+.formField .formFieldYear input:focus,
+.formField .formFieldPrice input:focus {
+  border-bottom: 2px solid #111;
+}
+
+.container {
+  position: relative;
+  height: 30px;
+  margin: auto;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.container .checkColor {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid #999;
+}
+.container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.container .checkmarkWhite {
+  background-color: #fff;
+}
+.container .checkmarkBlack {
+  background-color: #000;
+}
+.container .checkmarkGray {
+  background-color: #cbcbcc;
+}
+.container .checkmarkRed {
+  background-color: #d74345;
+}
+.container .checkmarkGreen {
+  background-color: #88c504;
+}
+
+.checkColor:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  top: -2px;
+  left: -2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #c4092f;
+}
+
+.formFieldStatus {
+  width: 100%;
+  height: 40px;
+}
+
+.formFieldSend button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  background-color: #c4092f;
+  border-radius: 3px;
+}
+
+.icon-arrow-right-mini {
+  display: inline-block;
+  pointer-events: none;
+  vertical-align: bottom;
+  fill: white;
+  margin-left: 4px;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  top: -3px;
+}
+
+@media (min-width: 768px) {
+  .formFieldName,
+  .formFieldYear,
+  .formFieldPrice,
+  .formFieldColor,
+  .formFieldStatus,
+  .formFieldSend {
+    width: 32%;
+  }
+}
+@media (max-width: 767px) {
+  .formFieldName {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 100%;
+    margin-bottom: 0.5em;
+  }
+
+  .formFieldYear {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 49%;
+  }
+
+  .formFieldPrice {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 49%;
+  }
+
+  .formFieldColor {
+    width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .formFieldStatus, .formFieldSend {
+    width: 49%;
+    height: 40px;
+  }
+}
+.formField input {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  color: #111;
+  border: 1px solid #999;
+}
+
+::-webkit-input-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+::-ms-input-placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #999;
+}
+
+::-ms-input-placeholder {
+  color: #999;
+}
+
+.inStock {
+  padding-top: 24px;
+}
+.inStock h2 {
+  margin-bottom: 32px;
+  padding-left: 1rem;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  color: #282d30;
+  text-transform: uppercase;
+  border-left: 2px solid #8b9497;
+}
+.inStock .carsTable {
+  background: #f5f6f6;
+}
+.inStock .tableRow {
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  border-bottom: 1px solid #e6e9ea;
+}
+.inStock .tableRow .tableHead {
+  background: #c4092f;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .1em;
+}
+@media (max-width: 767px) {
+  .inStock .tableRow .tableHead {
+    display: none;
+  }
+}
+.inStock .tableRow .tableCell {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 0.5rem 1rem;
+}
+@media (min-width: 768px) {
+  .inStock .tableRow .tableCell:nth-child(1) {
+    width: 40%;
+  }
+  .inStock .tableRow .tableCell:nth-child(2) {
+    width: 5%;
+  }
+  .inStock .tableRow .tableCell:nth-child(3) {
+    width: 10%;
+  }
+  .inStock .tableRow .tableCell:nth-child(4) {
+    width: 15%;
+  }
+  .inStock .tableRow .tableCell:nth-child(5) {
+    width: 15%;
+  }
+  .inStock .tableRow .tableCell:nth-child(6) {
+    width: 15%;
+  }
+  .inStock .tableRow .tableCell:nth-child(7) {
+    width: 40%;
+  }
+}
+@media (max-width: 767px) {
+  .inStock .tableRow .tableCell:nth-child(1) {
+    width: 40%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .inStock .tableRow .tableCell:nth-child(2) {
+    width: 20%;
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  .inStock .tableRow .tableCell:nth-child(3) {
+    width: 20%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .inStock .tableRow .tableCell:nth-child(4) {
+    width: 40%;
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  .inStock .tableRow .tableCell:nth-child(5) {
+    width: 40%;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .inStock .tableRow .tableCell:nth-child(6) {
+    width: 40%;
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+  .inStock .tableRow .tableCell:nth-child(7) {
+    width: 100%;
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+}
+.inStock .tableRow .additionally {
+  display: block;
+  width: 40%;
+  padding: 0 1rem 1rem;
+  font-size: 13px;
+  color: #8b9497;
+}
+
+.carsColor {
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.black {
+  background-color: #000;
+}
+
+.white {
+  background-color: #fff;
+  border: 1px solid #e6e9ea;
+}
+
+.gray {
+  background-color: #cbcbcc;
+}
+
+.red {
+  background-color: #d74345;
+}
+
+.green {
+  background-color: #88c504;
+}
+
+button {
+  display: inline-block;
+  font-size: 14px;
+  background: none;
+  border-radius: 2em;
+  padding: 0.5em 1em;
+  color: #8b9497;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+button:hover {
+  color: white;
+  background: #282d30;
+}
